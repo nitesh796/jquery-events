@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Jquery Alerts</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <div class="alerts">
+      <a id="click" href="javascript:void(0);">Click</a>&nbsp;&nbsp;&nbsp;
+      <a id="dblclick" href="javascript:void(0);">Double click</a>&nbsp;&nbsp;&nbsp;
+      <a id="mouseover" href="javascript:void(0);">Mouseover</a>&nbsp;&nbsp;&nbsp;
+      <a id="mouseout" href="javascript:void(0);">Mouseout</a>&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="alerts">
+      <input type="text" id="focusblur" name="" value="" placeholder="Focus blur">&nbsp;&nbsp;&nbsp;
+      <input type="text" id="keyupdown" name="" value="" placeholder="Keyup Keydown">&nbsp;&nbsp;&nbsp;
+    </div>
+    <div class="alerts">
+      <span id="message">Nice to meet you</span>
+    </div>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+      $("#click").click(function(){
+        alert("Clicked");
+      });
+      $("#dblclick").dblclick(function(){
+        alert("Double Clicked");
+      });
+      $("#mouseover").mouseover(function(){
+        alert("Mouseover");
+      });
+      $("#mouseout").mouseout(function(){
+        alert("Mouseout");
+      });
+      $("#focusblur").focus(function(){
+        $("#message").css("display", "block").fadeOut(2000);
+      });
+      $("#focusblur").blur(function(){
+        alert("Blur");
+      });
+      $("#keyupdown").keydown(function(){
+        $("#keyupdown").css("background", "grey");
+      });
+      $("#keyupdown").keyup(function(){
+        $("#keyupdown").css("background", "yellow");
+      });
+    </script>
+  </body>
+</html>
